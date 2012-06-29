@@ -1,5 +1,5 @@
---- E:/XAMPP/xampp/htdocs/wbb3.1/templates/board.tpl	Thu Sep 17 17:05:20 2009
-+++ C:/Users/Stefan/Downloads/Websoftware/WCF & WBB/Work/Nicht fertige Pakete/Stickies & Announcements trennen/board_changed.tpl	Mon Feb 15 22:28:07 2010
+--- a/board.tpl	Thu Sep 17 17:05:20 2009
++++ b/board.tpl	Fri Jun 29 23:09:00 2012
 @@ -67,7 +67,7 @@
  			{include file='threadInlineEdit' pageType=board}
  		{/if}

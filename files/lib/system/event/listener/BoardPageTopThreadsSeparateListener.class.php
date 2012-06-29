@@ -3,14 +3,14 @@
 require_once(WCF_DIR.'lib/system/event/EventListener.class.php');
 
 /**
- * Separates top threads on BoardPage
+ * Separates top threads on BoardPage.
  *
- * @author      Stefan Hahn
- * @copyright   2010 Stefan Hahn
- * @license     GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
- * @package     net.leon.wbb.separateTopThreads
- * @subpackage  system.event.listener
- * @category    Community Framework 
+ * @author	Stefan Hahn
+ * @copyright	2010-2012 Stefan Hahn
+ * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
+ * @package	com.leon.wbb.separateTopThreads
+ * @subpackage	system.event.listener
+ * @category	Burning Board
  */
 class BoardPageTopThreadsSeparateListener implements EventListener {
 	protected $topThreads;
@@ -71,4 +71,3 @@ class BoardPageTopThreadsSeparateListener implements EventListener {
 		}
 	}
 }
-?>
