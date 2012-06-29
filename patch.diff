@@ -1,0 +1,26 @@
+--- E:/XAMPP/xampp/htdocs/wbb3.1/templates/board.tpl	Thu Sep 17 17:05:20 2009
++++ C:/Users/Stefan/Downloads/Websoftware/WCF & WBB/Work/Nicht fertige Pakete/Stickies & Announcements trennen/board_changed.tpl	Mon Feb 15 22:28:07 2010
+@@ -67,7 +67,7 @@
+ 			{include file='threadInlineEdit' pageType=board}
+ 		{/if}
+ 		
+-		{if $topThreads|count == 0 && $normalThreads|count == 0}
++		{if $announcements|count == 0 && $stickies|count == 0 && $normalThreads|count == 0}
+ 			<div class="border content">
+ 				<div class="container-1">
+ 					<p>{lang}wbb.board.noThreads{/lang}</p>
+@@ -75,8 +75,12 @@
+ 			</div>
+ 		{else}
+ 			<script type="text/javascript" src="{@RELATIVE_WBB_DIR}js/ThreadMarkAsRead.class.js"></script>
+-			{if $topThreads|count > 0}
+-				{include file="boardThreads" title="{lang}wbb.board.threads.top{/lang}" threads=$topThreads listName=topThreadsStatus listStatus=$topThreadsStatus listHasNewThreads=$newTopThreads}
++			{if $announcements|count > 0}
++				{include file="boardThreads" title="{lang}wbb.board.threads.top.announcements{/lang}" threads=$announcements listName=announcementsStatus listStatus=$announcementsStatus listHasNewThreads=$newAnnouncements}
++			{/if}
++			
++			{if $stickies|count > 0}
++				{include file="boardThreads" title="{lang}wbb.board.threads.top.stickies{/lang}" threads=$stickies listName=stickiesStatus listStatus=$stickiesStatus listHasNewThreads=$newStickies}
+ 			{/if}
+ 			
+ 			{if $normalThreads|count > 0}
