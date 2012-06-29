@@ -1,1 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?><data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/user-options.xsd">	<import>		<options>			<option name="announcementsStatus">				<categoryname>hidden</categoryname>				<optiontype>boolean</optiontype>				<visible>4</visible>				<editable>4</editable>				<defaultvalue>1</defaultvalue>			</option>			<option name="stickiesStatus">				<categoryname>hidden</categoryname>				<optiontype>boolean</optiontype>				<visible>4</visible>				<editable>4</editable>				<defaultvalue>1</defaultvalue>			</option>		</options>	</import></data>
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/user-options.xsd">
+	<import>
+		<options>
+			<option name="announcementsStatus">
+				<categoryname>hidden</categoryname>
+				<optiontype>boolean</optiontype>
+				<visible>4</visible>
+				<editable>4</editable>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<option name="stickiesStatus">
+				<categoryname>hidden</categoryname>
+				<optiontype>boolean</optiontype>
+				<visible>4</visible>
+				<editable>4</editable>
+				<defaultvalue>1</defaultvalue>
+			</option>
+		</options>
+	</import>
+</data>
