@@ -13,53 +13,15 @@ require_once(WCF_DIR.'lib/system/event/EventListener.class.php');
  * @category	Burning Board
  */
 class BoardPageTopThreadsSeparateListener implements EventListener {
-	protected $topThreads;
-	
-	protected $announcements = array();
-	protected $newAnnouncements = 0;
-	protected $stickies = array();
-	protected $newStickies = 0;
-	
 	protected static $announcementsStatus = 1;
 	protected static $stickiesStatus = 1;
-	
 	
 	/**
 	 * @see EventListener::execute()
 	 */
 	public function execute($eventObj, $className, $eventName) {
-		if ($eventName == 'assignVariables') {
-			// get top threads
-			$this->topThreads = ($eventObj->threadList != null) ? $eventObj->threadList->topThreads : null;
-			
-			// categorize top threads
-			if ($this->topThreads != null) {
-				foreach ($this->topThreads as $topThread) {
-					if ($topThread->isAnnouncement) {
-						$this->announcements[] = $topThread;
-						if ($topThread->isNew()) $this->newAnnouncements++;
-					}
-					
-					if ($topThread->isSticky) {
-						$this->stickies[] = $topThread;
-						if ($topThread->isNew()) $this->newStickies++;
-					}
-				}
-			}
-			
-			// assign announcements and stickies to the template engine
-			WCF::getTPL()->assign(array(
-				'announcements' => (($this->topThreads != null) ? $this->announcements : null),
-				'newAnnouncements' => (($this->topThreads != null) ? $this->newAnnouncements : 0),
-				'announcementsStatus' => self::$announcementsStatus,
-				'stickies' => (($this->topThreads != null) ? $this->stickies : null),
-				'newStickies' => (($this->topThreads != null) ? $this->newStickies : 0),
-				'stickiesStatus' => self::$stickiesStatus
-			));
-		}
-		
-		if ($eventName == 'readData') {
-			// get status of the two new lists and safe it
+		if ($eventName === 'readData') {
+			// get status of the two lists
 			if (WCF::getUser()->userID) {
 				self::$announcementsStatus = intval(WCF::getUser()->announcementsStatus);
 				self::$stickiesStatus = intval(WCF::getUser()->stickiesStatus);
@@ -68,6 +30,41 @@ class BoardPageTopThreadsSeparateListener implements EventListener {
 				if (WCF::getSession()->getVar('announcementsStatus') !== null) self::$announcementsStatus = WCF::getSession()->getVar('announcementsStatus');
 				if (WCF::getSession()->getVar('stickiesStatus') !== null) self::$stickiesStatus = WCF::getSession()->getVar('stickiesStatus');
 			}
+		}
+		else if ($eventName === 'assignVariables') {
+			// variables
+			$announcements = array();
+			$newAnnouncements = 0;
+			$stickies = array();
+			$newStickies = 0;
+			
+			// get top threads
+			$topThreads = ($eventObj->threadList != null) ? $eventObj->threadList->topThreads : null;
+			
+			// categorize top threads
+			if ($topThreads != null) {
+				foreach ($topThreads as $topThread) {
+					if ($topThread->isAnnouncement) {
+						$announcements[] = $topThread;
+						if ($topThread->isNew()) $newAnnouncements++;
+					}
+					
+					if ($topThread->isSticky) {
+						$stickies[] = $topThread;
+						if ($topThread->isNew()) $newStickies++;
+					}
+				}
+			}
+			
+			// assign announcements and stickies to the template engine
+			WCF::getTPL()->assign(array(
+				'announcements' => $announcements,
+				'newAnnouncements' => $newAnnouncements,
+				'announcementsStatus' => self::$announcementsStatus,
+				'stickies' => $stickies,
+				'newStickies' => $newStickies,
+				'stickiesStatus' => self::$stickiesStatus
+			));
 		}
 	}
 }
