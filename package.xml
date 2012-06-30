@@ -6,8 +6,8 @@
 		<packagedescription language="de"><![CDATA[Getrennte Boxen für Ankündigungen und wichtige Themen in der Themenauflistung.]]></packagedescription>
 		<packagedescription language="en"><![CDATA[Separated boxes for announcements and sticky threads on board page.]]></packagedescription>
 		<packageurl><![CDATA[https://github.com/Leon-/com.leon.wbb.separateTopThreads]]></packageurl>
-		<version>1.0.0 dev</version>
-		<date>2012-06-29</date>
+		<version>1.0.0</version>
+		<date>2012-06-30</date>
 		<standalone>0</standalone>
 		<isunique>0</isunique>
 		<plugin>com.woltlab.wbb</plugin>
