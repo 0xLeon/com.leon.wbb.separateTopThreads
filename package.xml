@@ -2,7 +2,9 @@
 <package name="com.leon.wbb.separateTopThreads" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/package.xsd">
 	<packageinformation>
 		<packagename><![CDATA[Separate Top Threads]]></packagename>
-		<packagedescription><![CDATA[Separate boxes for announcements and sticky threads on board page.]]></packagedescription>
+		<packagedescription language="de-informal"><![CDATA[Getrennte Boxen für Ankündigungen und wichtige Themen in der Themenauflistung.]]></packagedescription>
+		<packagedescription language="de"><![CDATA[Getrennte Boxen für Ankündigungen und wichtige Themen in der Themenauflistung.]]></packagedescription>
+		<packagedescription language="en"><![CDATA[Separated boxes for announcements and sticky threads on board page.]]></packagedescription>
 		<packageurl><![CDATA[https://github.com/Leon-/com.leon.wbb.separateTopThreads]]></packageurl>
 		<version>1.0.0 dev</version>
 		<date>2012-06-29</date>
