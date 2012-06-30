@@ -4,12 +4,12 @@
 		<eventlistener>
 			<eventClassName>BoardPage</eventClassName>
 			<eventName>readData</eventName>
-			<listenerClassFile>lib/system/event/listener/BoardPageTopThreadsSeparateListener.class.php</listenerClassFile>
+			<listenerClassFile>lib/system/event/listener/BoardPageSeparateTopThreadsListener.class.php</listenerClassFile>
 		</eventlistener>
 		<eventlistener>
 			<eventClassName>BoardPage</eventClassName>
 			<eventName>assignVariables</eventName>
-			<listenerClassFile>lib/system/event/listener/BoardPageTopThreadsSeparateListener.class.php</listenerClassFile>
+			<listenerClassFile>lib/system/event/listener/BoardPageSeparateTopThreadsListener.class.php</listenerClassFile>
 		</eventlistener>
 	</import>
 </data>

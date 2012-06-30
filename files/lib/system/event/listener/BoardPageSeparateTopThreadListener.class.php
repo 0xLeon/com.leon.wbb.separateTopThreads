@@ -12,7 +12,7 @@ require_once(WCF_DIR.'lib/system/event/EventListener.class.php');
  * @subpackage	system.event.listener
  * @category	Burning Board
  */
-class BoardPageTopThreadsSeparateListener implements EventListener {
+class BoardPageSeparateTopThreadsListener implements EventListener {
 	protected static $announcementsStatus = 1;
 	protected static $stickiesStatus = 1;
 	
