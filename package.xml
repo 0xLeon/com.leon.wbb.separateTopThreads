@@ -22,7 +22,7 @@
 	</excludedpackages>
 	<instructions type="install">
 		<files>files.tar</files>
-		<templatepatch>patch.diff</templatepatch>
+		<templatepatch>templatepatch.diff</templatepatch>
 		<eventlistener>eventlistener.xml</eventlistener>
 		<useroptions>useroptions.xml</useroptions>
 		<languages languagecode="de">de.xml</languages>
